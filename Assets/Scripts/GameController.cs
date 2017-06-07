@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
+	[SerializeField]GameObject canvas;
+	GUIController guiController;
+
+	void Awake() {
+		guiController = canvas.GetComponent<GUIController>();
+	}
+
 	void Start() {
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 	}
 
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
+		if (Input.GetKeyDown(KeyCode.Escape)) {
 			if (Cursor.visible == false) {
-				Debug.Log("change to visible");
-				Cursor.lockState = CursorLockMode.None;
-				Cursor.visible = true;
+				guiController.GamePause();
 			} else {
-				Debug.Log("change to invisible");
-				Cursor.lockState = CursorLockMode.Locked;
-				Cursor.visible = false;
+				guiController.GamePlay();
 			}
 		}
 	}
