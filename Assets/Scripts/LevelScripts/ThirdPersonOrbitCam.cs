@@ -144,7 +144,7 @@ public class ThirdPersonOrbitCam : MonoBehaviour
 		if(Physics.Raycast(checkPos, player.position+(Vector3.up* deltaPlayerHeight) - checkPos, out hit, relCameraPosMag))
 		{
 			// ... if it is not the player...
-			if(hit.transform != player && !hit.transform.GetComponent<Collider>().isTrigger)
+			if(hit.transform != player && !checkTrigger(hit))
 			{
 				// This position isn't appropriate.
 				return false;
@@ -161,12 +161,21 @@ public class ThirdPersonOrbitCam : MonoBehaviour
 
 		if(Physics.Raycast(player.position+(Vector3.up* deltaPlayerHeight), checkPos - player.position, out hit, maxDistance))
 		{
-			if(hit.transform != player && hit.transform != transform && !hit.transform.GetComponent<Collider>().isTrigger)
+			if(hit.transform != player && hit.transform != transform && !checkTrigger(hit))
 			{
 				return false;
 			}
 		}
 		return true;
+	}
+
+	bool checkTrigger(RaycastHit hit) {
+		Component[] colliders = hit.transform.GetComponentsInChildren<Collider>();
+		foreach (Collider collider in colliders) {
+			if (collider.isTrigger)
+				return true;
+		}
+		return false;
 	}
 
 	// Get camera magnitude.

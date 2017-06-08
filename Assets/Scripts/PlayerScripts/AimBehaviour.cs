@@ -12,6 +12,8 @@ public class AimBehaviour : GenericBehaviour
 	private int aimBool;                                                  // Animator variable related to aiming.
 	private bool aim;                                                     // Boolean to determine whether or not the player is aiming.
 
+	[SerializeField]Shooter weapon;
+
 	// Start is always called after any Awake functions.
 	void Start ()
 	{
@@ -55,6 +57,17 @@ public class AimBehaviour : GenericBehaviour
 
 		// Set aim boolean on the Animator Controller.
 		anim.SetBool (aimBool, aim);
+
+		// Raycast
+		if (weapon == null) return;
+		if (aim) {
+			weapon.showRaycast(true);
+		} else {
+			weapon.showRaycast(false);
+		}
+		if (Input.GetButton("Fire1")) {
+			weapon.Fire();
+		}
 	}
 
 	// LocalFixedUpdate overrides the virtual function of the base class.
