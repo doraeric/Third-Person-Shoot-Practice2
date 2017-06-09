@@ -33,8 +33,8 @@ public class MoveBehaviour : GenericBehaviour
 	void Update ()
 	{
 		// Activate run by input.
-		run = Input.GetButton ("Run");
-		if(Input.GetButtonDown ("Jump"))
+		run = GameManager.Instance.InputController.GetButton ("Run");
+		if(GameManager.Instance.InputController.GetButtonDown ("Jump"))
 			jump = true;
 	}
 

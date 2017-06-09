@@ -26,7 +26,7 @@ public class FlyBehaviour : GenericBehaviour {
 	void Update ()
 	{
 		// Toggle fly by input.
-		if (Input.GetButtonDown ("Fly"))
+		if (GameManager.Instance.InputController.GetButtonDown ("Fly"))
 		{
 			fly = !fly;
 

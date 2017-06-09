@@ -28,7 +28,7 @@ public class AimBehaviour : GenericBehaviour
 	void Update ()
 	{
 		// Activate aim by input.
-		aim = Input.GetButton("Aim");
+		aim = GameManager.Instance.InputController.GetButton("Aim");
 
 		// Player is aiming.
 		if (aim)
@@ -50,7 +50,7 @@ public class AimBehaviour : GenericBehaviour
 		canSprint = !aim;
 
 		// Toggle camera aim position left or right.
-		if (aim && Input.GetButtonDown ("Fire3"))
+		if (aim && GameManager.Instance.InputController.GetButtonDown ("Fire3"))
 		{
 			aimCamOffset.x = aimCamOffset.x * (-1);
 		}
@@ -65,7 +65,7 @@ public class AimBehaviour : GenericBehaviour
 		} else {
 			weapon.weaponAim(false);
 		}
-		if (Input.GetButton("Fire1")) {
+		if (GameManager.Instance.InputController.GetButton("Fire1")) {
 			weapon.Fire();
 		}
 	}

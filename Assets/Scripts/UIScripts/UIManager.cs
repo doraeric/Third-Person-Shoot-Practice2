@@ -20,6 +20,17 @@ public class UIManager {
 
 	public Dictionary<string, GameObject> m_PanelList = new Dictionary<string, GameObject>();
 
+	public bool IsClear() {
+		// return m_PanelList.Count == 0;
+		foreach (KeyValuePair<string, GameObject> item in m_PanelList) {
+			if (item.Value == null)
+				continue;
+			if (item.Value.activeSelf == true)
+				return false;
+		}
+		return true;
+	}
+
 	private bool CheckCanvasRootIsNull() {
 		if (CanvasRoot == null) {
 			Debug.LogError("CanvasRoot is Null, Please in your Canvas add UIRootHandler.cs");
@@ -30,8 +41,12 @@ public class UIManager {
 		}
 	}
 
-	private bool IsPanelLive(string name) {
+	public bool IsPanelLive(string name) {
 		return m_PanelList.ContainsKey(name);
+	}
+
+	public bool IsPaneVisible(string name) {
+		return m_PanelList[name].activeSelf;
 	}
 
 	public GameObject ShowPanel(string name) {
@@ -56,14 +71,20 @@ public class UIManager {
 		return panel;
 	}
 
-	/*public void TogglePanel(string name, bool isOn) {
+	public void TogglePanel(string name, bool isOn) {
 		if (IsPanelLive(name)) {
-			if (m_PanelList[name] != null)
+			if (m_PanelList[name] != null) {
 				m_PanelList[name].SetActive(isOn);
+				if (IsClear()) {
+					showCursor(false);
+				} else {
+					showCursor(true);
+				}
+			}
 		} else {
 			Debug.LogErrorFormat("TogglePanel [{0}] not found.", name);
 		}
-	}*/
+	}
 
 	public void ClosePanel(string name) {
 		if (IsPanelLive(name)) {

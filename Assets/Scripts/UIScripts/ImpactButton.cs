@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResumeButton : MonoBehaviour {
+public class ImpactButton : MonoBehaviour {
 	public void OnBtnClick() {
-		UIManager.Instance.TogglePanel("PausePanel", false);
+		UIManager.Instance.TogglePanel("WeaponWheel", false);
 	}
 }

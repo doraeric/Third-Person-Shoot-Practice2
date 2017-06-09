@@ -41,15 +41,15 @@ public class BasicBehaviour : MonoBehaviour
 	void Update()
 	{
 		// Store the input axes.
-		h = Input.GetAxis("Horizontal");
-		v = Input.GetAxis("Vertical");
+		h = GameManager.Instance.InputController.GetAxis("Horizontal");
+		v = GameManager.Instance.InputController.GetAxis("Vertical");
 
 		// Set the input axes on the Animator Controller.
 		anim.SetFloat(hFloat, h);
 		anim.SetFloat(vFloat, v);
 
 		// Toggle sprint by input.
-		sprint = Input.GetButton ("Sprint");
+		sprint = GameManager.Instance.InputController.GetButton ("Sprint");
 
 		// Set the correct camera FOV.
 		if(isSprinting())
