@@ -6,6 +6,7 @@ public class Shooter : MonoBehaviour {
 
 	[SerializeField]float rateOfFire;
 	[SerializeField]Projectile projectile;
+	[SerializeField]Transform tpsCamera;
 
 	[HideInInspector]
 	public Transform muzzle;
@@ -29,9 +30,11 @@ public class Shooter : MonoBehaviour {
 		canFire = true;
 	}
 
-	public virtual void showRaycast(bool show) {
-		if (!show) {
+	public virtual void weaponAim(bool aiming) {
+		if (!aiming) {
 			laserLine.enabled = false;
+			//transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.identity, 1);
+			transform.localRotation = Quaternion.identity;
 			return;
 		}
 		laserLine.enabled = true;
@@ -40,15 +43,7 @@ public class Shooter : MonoBehaviour {
 		laserLine.SetPosition(0, muzzle.position);
 		laserLine.SetPosition(1, muzzle.position + direction);
 
-		/*
-		RaycastHit hit;
-		if (Physics.Raycast(muzzle.position, direction, out hit, 100)) {
-			Debug.Log("hit: " + hit.transform.name);
-			Collider[] colliders = hit.transform.GetComponentsInChildren<Collider>();
-			Debug.Log("how many colliders: " + colliders.Length);
-			if (hit.transform.GetComponent<Collider>() == null) {
-				Debug.Log("has no collider?");
-			}
-		}*/
+		transform.rotation = tpsCamera.rotation;
+		//transform.rotation = Quaternion.Lerp(transform.rotation, camera.rotation, 1);
 	}
 }

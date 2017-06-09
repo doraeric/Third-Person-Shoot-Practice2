@@ -61,9 +61,9 @@ public class AimBehaviour : GenericBehaviour
 		// Raycast
 		if (weapon == null) return;
 		if (aim) {
-			weapon.showRaycast(true);
+			weapon.weaponAim(true);
 		} else {
-			weapon.showRaycast(false);
+			weapon.weaponAim(false);
 		}
 		if (Input.GetButton("Fire1")) {
 			weapon.Fire();

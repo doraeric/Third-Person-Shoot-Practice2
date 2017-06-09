@@ -408,6 +408,7 @@ MonoBehaviour:
   rateOfFire: 0.3
   projectile: {fileID: 114470353392021220, guid: a44f37e7870df426baebdff55cda8005,
     type: 2}
+  tpsCamera: {fileID: 589785348}
   muzzle: {fileID: 0}
 --- !u!120 &145960617
 LineRenderer:
