@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-	[SerializeField]GameObject canvas;
-	GUIController guiController;
-
-	void Awake() {
-		guiController = canvas.GetComponent<GUIController>();
-	}
 
 	void Start() {
 		Cursor.lockState = CursorLockMode.Locked;
@@ -18,9 +12,11 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			if (Cursor.visible == false) {
-				guiController.GamePause();
+				UIManager.Instance.ShowPanel("PausePanel");
+				//guiController.GamePause();
 			} else {
-				guiController.GamePlay();
+				//guiController.GamePlay();
+				UIManager.Instance.ClosePanel("PausePanel");
 			}
 		}
 	}
