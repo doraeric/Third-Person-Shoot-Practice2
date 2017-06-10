@@ -17,14 +17,24 @@ public class Projectile : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision) {
+		// should never happen, all goes to trigger
+		Debug.Log("OnCollisionEnter");
 		Destroy(gameObject);
 	}
 
-	void OnTriggerEnter(Collider other) {
-		Destroy(gameObject);
+	protected virtual void OnTriggerEnter(Collider other) {
+		// hit walls
+		if (!other.isTrigger) {
+			Debug.Log("hit walls");
+			Destroy(gameObject);
+			return;
+		}
+
 		var destructable = other.transform.GetComponent<Destructable>();
+		if (destructable == null)
+			destructable = other.transform.GetComponentInParent<Destructable>();
 		if (destructable == null) {
-			print("not destructable");
+			Debug.Log("not destructable");
 			return;
 		}
 

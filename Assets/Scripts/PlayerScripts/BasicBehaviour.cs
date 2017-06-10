@@ -36,6 +36,7 @@ public class BasicBehaviour : MonoBehaviour
 		vFloat = Animator.StringToHash("V");
 		camScript = playerCamera.GetComponent<ThirdPersonOrbitCam> ();
 		rbody = GetComponent<Rigidbody> ();
+		GameManager.Instance.LocalPlayer = this;
 	}
 
 	void Update()

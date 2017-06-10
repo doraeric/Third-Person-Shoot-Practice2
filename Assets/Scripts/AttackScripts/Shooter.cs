@@ -7,6 +7,7 @@ public class Shooter : MonoBehaviour {
 	[SerializeField]float rateOfFire;
 	[SerializeField]Projectile projectile;
 	[SerializeField]Transform tpsCamera;
+	[SerializeField]bool isPlayer;
 
 	[HideInInspector]
 	public Transform muzzle;
@@ -17,7 +18,7 @@ public class Shooter : MonoBehaviour {
 
 	void Awake() {
 		muzzle = transform.Find("Muzzle");
-		laserLine = GetComponent<LineRenderer>();
+		if (isPlayer) laserLine = GetComponent<LineRenderer>();
 	}
 
 	public virtual void Fire() {
@@ -31,6 +32,8 @@ public class Shooter : MonoBehaviour {
 	}
 
 	public virtual void weaponAim(bool aiming) {
+		if (!isPlayer)
+			return;
 		if (!aiming) {
 			laserLine.enabled = false;
 			//transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.identity, 1);

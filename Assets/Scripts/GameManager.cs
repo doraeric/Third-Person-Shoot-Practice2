@@ -26,4 +26,17 @@ public class GameManager {
 			return _InputController;
 		}
 	}
+
+	private BasicBehaviour _LocalPlayer;
+	public BasicBehaviour LocalPlayer {
+		get {
+			return _LocalPlayer;
+		}
+		set {
+			_LocalPlayer = value;
+			/*if (OnLocalPlayerJoined != null)
+				OnLocalPlayerJoined(_LocalPlayer);
+				*/
+		}
+	}
 }

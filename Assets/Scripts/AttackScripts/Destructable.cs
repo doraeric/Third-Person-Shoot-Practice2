@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Destructable : MonoBehaviour {
 
-	[SerializeField]float hitPoints;
+	[SerializeField]float hitPoints = 5;
 
 	float damageTaken;
 
