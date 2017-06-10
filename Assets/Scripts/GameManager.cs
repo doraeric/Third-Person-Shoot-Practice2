@@ -39,4 +39,14 @@ public class GameManager {
 				*/
 		}
 	}
+
+	private GameObject _tpsCamera;
+	public GameObject tpsCamera {
+		get {
+			return _tpsCamera;
+		}
+		set {
+			_tpsCamera = value;
+		}
+	}
 }

@@ -46,6 +46,8 @@ public class ThirdPersonOrbitCam : MonoBehaviour
 		ResetTargetOffsets ();
 		ResetFOV ();
 		ResetMaxVerticalAngle();
+
+		GameManager.Instance.tpsCamera = this.gameObject;
 	}
 
 	void LateUpdate()

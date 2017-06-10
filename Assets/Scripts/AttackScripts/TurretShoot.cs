@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Shooter))]
+[RequireComponent(typeof(Destructable))]
 public class TurretShoot : MonoBehaviour {
 
 	[SerializeField]float detectDist = 10;

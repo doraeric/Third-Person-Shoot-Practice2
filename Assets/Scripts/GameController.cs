@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
 
 		UIManager.Instance.ShowPanel("PausePanel");
 		UIManager.Instance.ShowPanel("WeaponWheel");
+		UIManager.Instance.ShowPanel("HealthPanel");
 		UIManager.Instance.TogglePanel("PausePanel", false);
 		UIManager.Instance.TogglePanel("WeaponWheel", false);
 	}

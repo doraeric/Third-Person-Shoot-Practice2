@@ -6,7 +6,6 @@ public class Shooter : MonoBehaviour {
 
 	[SerializeField]float rateOfFire;
 	[SerializeField]Projectile projectile;
-	[SerializeField]Transform tpsCamera;
 	[SerializeField]bool isPlayer;
 
 	[HideInInspector]
@@ -46,7 +45,7 @@ public class Shooter : MonoBehaviour {
 		laserLine.SetPosition(0, muzzle.position);
 		laserLine.SetPosition(1, muzzle.position + direction);
 
-		transform.rotation = tpsCamera.rotation;
+		transform.rotation = GameManager.Instance.tpsCamera.transform.rotation;
 		//transform.rotation = Quaternion.Lerp(transform.rotation, camera.rotation, 1);
 	}
 }

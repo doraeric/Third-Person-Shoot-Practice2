@@ -5,5 +5,6 @@ using UnityEngine;
 public class ImpactButton : MonoBehaviour {
 	public void OnBtnClick() {
 		UIManager.Instance.TogglePanel("WeaponWheel", false);
+		GameManager.Instance.LocalPlayer.GetComponent<PlayerHealth>().Skill2();
 	}
 }

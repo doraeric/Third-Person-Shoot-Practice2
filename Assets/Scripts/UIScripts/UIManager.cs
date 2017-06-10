@@ -21,13 +21,8 @@ public class UIManager {
 	public Dictionary<string, GameObject> m_PanelList = new Dictionary<string, GameObject>();
 
 	public bool IsClear() {
-		// return m_PanelList.Count == 0;
-		foreach (KeyValuePair<string, GameObject> item in m_PanelList) {
-			if (item.Value == null)
-				continue;
-			if (item.Value.activeSelf == true)
-				return false;
-		}
+		if (IsPaneVisible("PausePanel") || IsPaneVisible("WeaponWheel"))
+			return false;
 		return true;
 	}
 

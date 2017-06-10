@@ -23,8 +23,9 @@ public class Projectile : MonoBehaviour {
 	}
 
 	protected virtual void OnTriggerEnter(Collider other) {
+
 		// hit walls
-		if (!other.isTrigger) {
+		if (!other.isTrigger && other.tag != "Player") {
 			Debug.Log("hit walls");
 			Destroy(gameObject);
 			return;
@@ -34,10 +35,19 @@ public class Projectile : MonoBehaviour {
 		if (destructable == null)
 			destructable = other.transform.GetComponentInParent<Destructable>();
 		if (destructable == null) {
-			Debug.Log("not destructable");
+			Debug.Log(other.name + " is not destructable");
 			return;
 		}
 
+		if (other.tag == "Player") {
+			BasicBehaviour player = GameManager.Instance.LocalPlayer;
+			PlayerHealth ph = player.GetComponent<PlayerHealth>();
+			if (ph.Intangible) {
+				return;
+			}
+		}
+
 		destructable.TakeDamege(damage);
+		Destroy(gameObject);
 	}
 }
