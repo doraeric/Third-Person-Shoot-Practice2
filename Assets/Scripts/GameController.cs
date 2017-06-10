@@ -8,9 +8,9 @@ public class GameController : MonoBehaviour {
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 
-		UIManager.Instance.ShowPanel("PausePanel");
-		UIManager.Instance.ShowPanel("WeaponWheel");
 		UIManager.Instance.ShowPanel("HealthPanel");
+		UIManager.Instance.ShowPanel("WeaponWheel");
+		UIManager.Instance.ShowPanel("PausePanel");
 		UIManager.Instance.TogglePanel("PausePanel", false);
 		UIManager.Instance.TogglePanel("WeaponWheel", false);
 	}
