@@ -9,8 +9,8 @@
 | Term End Project             | 40% | proposal 10%, presentation 20%, report and delivery 10%|
 
 ## Project presentation guide
-Presentations are within 20 minutes(25-30 slides)
-All team members participate in presentation
+Presentations are within 20 minutes(25-30 slides), all team members participate in presentation.
+
 Presentation should include:
 - Project overview: why the topic interests you?
 - How your project was carried out? The process.
@@ -20,6 +20,7 @@ Presentation should include:
 - If students would like to use open source models, please give credit to the source and discuss how the models are used and what modifications and changes made for the project.
 
 20 minutes total, allocation of time to each team member is totally up to each group, but every member must present.
+
 Please submit your group presentation slides on Ceiba at the end your presentation.
 
 ## Evaluation Criteria for group project
