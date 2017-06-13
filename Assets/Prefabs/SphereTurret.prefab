@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584dacb50ddbb4c1ba3a907b77dd67a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 0.2
+  rateOfFire: 0.5
   projectile: {fileID: 114203816506953364, guid: 47a430bf1c1454f57af20ff56323f891,
     type: 2}
   isPlayer: 0

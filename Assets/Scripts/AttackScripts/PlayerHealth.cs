@@ -58,7 +58,6 @@ public class PlayerHealth : Destructable {
 
 	public override void TakeDamege(float amount) {
 		base.TakeDamege(amount);
-		Debug.Log("HP: " + HitPointRemaining);
 		hp.SetHP(HitPointRemaining);
 	}
 
