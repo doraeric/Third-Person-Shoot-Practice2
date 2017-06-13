@@ -4,8 +4,8 @@ using System.Collections;
 // MoveBehaviour inherits from GenericBehaviour. This class corresponds to basic walk and run behaviour, it is the default behaviour.
 public class MoveBehaviour : GenericBehaviour
 {
-	public float walkSpeed = 0.15f;                 // Default walk speed.
-	public float runSpeed = 1.0f;                   // Default run speed.
+	public float walkSpeed = 0.2f;                 // Default walk speed.
+	public float runSpeed = 1.5f;                   // Default run speed.
 	public float sprintSpeed = 2.0f;                // Default sprint speed.
 	public float speedDampTime = 0.1f;              // Default damp time to change the animations based on current speed.
 	public float jumpHeight = 1.0f;                 // Default jump height.
@@ -66,7 +66,7 @@ public class MoveBehaviour : GenericBehaviour
 			if(speed > 0)
 			{
 				// Set jump vertical impulse when moving.
-				rbody.AddForce (Vector3.up * jumpHeight * rbody.mass * 10, ForceMode.Impulse);
+				rbody.AddForce (Vector3.up * jumpHeight * rbody.mass * 20, ForceMode.Impulse);
 			}
 		}
 	}
