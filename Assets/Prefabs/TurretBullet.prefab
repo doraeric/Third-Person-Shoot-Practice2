@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c387670d84f6f4cf9a17c5641ffb5db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 12
   timeToLive: 10
   damage: 1
 --- !u!114 &114809436943546834
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d1b4066d9c4454a8df0eb272e3d98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 5
+  hitPoints: 1
 --- !u!135 &135779782068851686
 SphereCollider:
   m_ObjectHideFlags: 1
