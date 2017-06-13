@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9bcfd940ceed347bb82306c77ae8a06c
-timeCreated: 1497259012
+timeCreated: 1497283189
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -16,7 +16,6 @@ ModelImporter:
     2300000: Plane
     3300000: Plane
     4300000: Plane
-    6400000: Plane
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,7 +44,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fbb925cc5be4762ba3cdd7ac28e776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectDist: 10
+  detectDist: 30
 --- !u!114 &114503659317885684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584dacb50ddbb4c1ba3a907b77dd67a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 1
+  rateOfFire: 0.4
   projectile: {fileID: 114203816506953364, guid: 47a430bf1c1454f57af20ff56323f891,
     type: 2}
   isPlayer: 0
@@ -164,4 +164,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd630a338fb2e4a509e63cce1c089271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 1
+  hitPoints: 30
