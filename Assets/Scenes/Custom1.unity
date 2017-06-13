@@ -492,10 +492,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dd3e329cc484b42ac6cb9e3789f5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 0.5
+  rateOfFire: 0.3
   projectile: {fileID: 114497280950871650, guid: a44f37e7870df426baebdff55cda8005,
     type: 2}
-  isPlayer: 0
+  isPlayer: 1
   muzzle: {fileID: 0}
 --- !u!120 &145960617
 LineRenderer:
@@ -3477,6 +3477,22 @@ Prefab:
     - target: {fileID: 100006, guid: b4f27ee0955da4f8594192bc35b18e91, type: 3}
       propertyPath: m_Name
       value: pillar_start
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: b4f27ee0955da4f8594192bc35b18e91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b4f27ee0955da4f8594192bc35b18e91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: b4f27ee0955da4f8594192bc35b18e91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: b4f27ee0955da4f8594192bc35b18e91, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f27ee0955da4f8594192bc35b18e91, type: 3}
