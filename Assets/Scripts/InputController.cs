@@ -15,6 +15,8 @@ public class InputController : MonoBehaviour {
 		Fire1 = Input.GetButton("Fire1");
 	}*/
 
+	public float MouseSensitive = 1f;
+
 	public bool GetButtonDown(string name) {
 		if (UIManager.Instance.IsClear()) {
 			return Input.GetButtonDown(name);
@@ -33,6 +35,10 @@ public class InputController : MonoBehaviour {
 
 	public float GetAxis (string name) {
 		if (UIManager.Instance.IsClear()) {
+			if (name == "Horizontal" || name == "Vertical" ||
+				name == "Mouse X" || name == "Mouse Y") {
+				return Input.GetAxis(name) * MouseSensitive;
+			}
 			return Input.GetAxis(name);
 		} else {
 			return 0.0f;
