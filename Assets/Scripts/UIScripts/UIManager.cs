@@ -73,7 +73,7 @@ public class UIManager {
 				if (IsClear()) {
 					showCursor(false);
 				} else {
-					showCursor(true);
+				showCursor(true);
 				}
 			}
 		} else {

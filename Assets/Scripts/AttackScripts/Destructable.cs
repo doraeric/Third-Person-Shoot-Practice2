@@ -24,6 +24,7 @@ public class Destructable : MonoBehaviour {
 	}
 
 	public virtual void TakeDamege(float amount) {
+		Debug.Log (name + " hp: " + HitPointRemaining);
 		damageTaken += amount;
 
 		if (!isAlive) {
