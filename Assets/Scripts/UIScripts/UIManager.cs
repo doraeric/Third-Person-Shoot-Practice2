@@ -70,11 +70,11 @@ public class UIManager {
 		if (IsPanelLive(name)) {
 			if (m_PanelList[name] != null) {
 				m_PanelList[name].SetActive(isOn);
-//				if (IsClear()) {
-//					showCursor(false);
-//				} else {
+				if (IsClear()) {
+					showCursor(false);
+				} else {
 				showCursor(true);
-//				}
+				}
 			}
 		} else {
 			Debug.LogErrorFormat("TogglePanel [{0}] not found.", name);

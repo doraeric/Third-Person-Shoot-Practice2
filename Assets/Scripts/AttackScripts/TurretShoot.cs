@@ -17,10 +17,14 @@ public class TurretShoot : MonoBehaviour {
 		Transform target = player.transform.Find("Center").transform;
 		if (target == null)
 			target = player.transform;
-		
-		float dist = Vector3.Distance(target.position, transform.position);
+
+		Transform from = this.transform.Find("Center");
+		if (from == null) {
+			from = this.transform;
+		}
+		float dist = Vector3.Distance(target.position, from.position);
 		if (dist < detectDist) {
-			Vector3 relativePos = target.position - transform.position;
+			Vector3 relativePos = target.position - from.position;
 			Quaternion toRotation = Quaternion.LookRotation(relativePos);
 			// transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.time * 0.1f);
 			transform.rotation = toRotation;
