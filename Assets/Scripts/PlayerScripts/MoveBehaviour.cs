@@ -66,7 +66,7 @@ public class MoveBehaviour : GenericBehaviour
 			if(speed > 0)
 			{
 				// Set jump vertical impulse when moving.
-				rbody.AddForce (Vector3.up * jumpHeight * rbody.mass * 20, ForceMode.Impulse);
+				rbody.AddForce (Vector3.up * jumpHeight * rbody.mass * 100, ForceMode.Impulse);
 			}
 		}
 	}

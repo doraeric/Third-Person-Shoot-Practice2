@@ -34,9 +34,10 @@ public class InputController : MonoBehaviour {
 	}
 
 	public float GetAxis (string name) {
+		// Horizontal & Vertical for WASD
+		// Mouse X & Mouse Y for mouse
 		if (UIManager.Instance.IsClear()) {
-			if (name == "Horizontal" || name == "Vertical" ||
-				name == "Mouse X" || name == "Mouse Y") {
+			if (name == "Mouse X" || name == "Mouse Y") {
 				return Input.GetAxis(name) * MouseSensitive;
 			}
 			return Input.GetAxis(name);
